@@ -3,25 +3,30 @@
 	email = ao.akua.leo@gmail.com
 	signingkey = E2F30CEB4AEE75BE
 [core]
-	editer = vim
+	editor = vim -c \"set fenc=utf=8\"
 	ignoreCase = true
 	fsmonitor = true
 	trustctime = true
 	quotePath = false
 	autocrlf = false
-	editor = vim -c \"set fenc=utf=8\"
+	symlinks = true
 [web "browser"]
 	cmd = google-chrome
 [color]
 	ui = auto
+[commit]
+	gpgsign = true
 [help]
 	format = web
 [alias]
+	h = help -a
+	ls = ls-files
 	st = status
+	sb = status -sb
+	test = add --dry-run .
 	b = branch
+	ba = branch -a
 	co = checkout
-	ft = fetch
-	ft = fetch
-	ft = fetch
-[commit]
-	gpgsign = true
+	f = fetch
+	fp = fetch --prune
+	df = diff
