@@ -130,4 +130,10 @@ function cdls() {
 
 alias cd=cdls
 
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/onesword0618/.sdkman"
+[[ -s "/home/onesword0618/.sdkman/bin/sdkman-init.sh" ]] && source "/home/onesword0618/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
