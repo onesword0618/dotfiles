@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Initialize Create .bash_profile and .bashrc.
+# The Script make .bash_profile and .bashrc.
 
 # Use Ubuntu 18.04.3 LTS
 lsb_release -d -r
