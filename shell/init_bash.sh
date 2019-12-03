@@ -2,7 +2,7 @@
 #
 # The Script make .bash_profile and .bashrc.
 
-# Use Ubuntu 18.04.3 LTS
+# Use Ubuntu
 lsb_release -d -r
 
 # Author onesword0618
