@@ -1,4 +1,8 @@
 # MySetting
+if [ -f ~/.bashrc ]; then
+       . ~/.bashrc
+fi
+
 # define for PS1
 green=$'\e[32m'
 
