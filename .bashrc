@@ -1,62 +1,53 @@
-# --- 説明 --- #
-# .bashrc
-# bashに依存する対話モードの時に読み込まれるファイル
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
 
-# --- 見出し --- #
-# 検証用
-# 対話モードチェック
-# エイリアス設定ファイルチェック
-# 対話モードで使う設定
-
-## -- 検証用 -- ##
-###  .bashrcが実行されているか確認する
-# echo "Read .bashrc";
-
-## -- 対話モードチェック -- ##
-### オプションで-iを使う場合(対話モード)に読み込まれる
+# If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-## -- エイリアス設定ファイルチェック -- ##
-### .bash_aliasの存在チェック
-if [ -L ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
-## -- 対話モードで使う設定 -- ##
-shopt -s histappend # シェル終了時、HISTFILEの設定値分、ファイルの最後に追加する
-# shopt -s checkwinsize # 画面サイズを見ているらしい。デフォルトだとonになっている
+# append to the history file, don't overwrite it
+shopt -s histappend
 
-#### コマンド実行履歴の環境変数 ####
-### コマンド実行履歴を保存する場所　デフォルトは~/.bash_history
-# HISTFILE=$HOME/.bash_history
-HISTFILESIZE=20000 # ファイルに記録する最大行数
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=100000
+HISTFILESIZE=20000
 
-### 保存方法
-HISTCONTROL=ignoreboth # 空白行で始まる行、以前の履歴と一致する行は保存しない
-HISTSIZE=100000 # シェル終了時までに保存される実行コマンドの最大値
+# HISTTIMEFORMAT
+HISTTIMEFORMAT='%y/%m/%d %H:%M:%S '
 
-### 実行日時の書式形式
-HISTTIMEFORMAT='%y/%m/%d %H:%M:%S ' # YY/M/D/HH/MM/SS
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
-##--------------------------------##
-# -- 未検証[デフォルトのまま] --#
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -67,12 +58,14 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -81,16 +74,40 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -101,11 +118,22 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-##--------------------------------##
 
-# SDKMAN
-export JAVA_HOME=$HOME/.sdkman/candidates/java/current # SDKMANで設定しているJAVA_HOME
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# MySetting
+alias ls='ls -a -F --color=auto'
+
+function cdls() {
+ \cd $1
+ ls;
+}
+
+alias cd=cdls
+
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/onesword0618/.sdkman"
+[[ -s "/home/onesword0618/.sdkman/bin/sdkman-init.sh" ]] && source "/home/onesword0618/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
