@@ -43,7 +43,7 @@ readonly WORKER=$'\u'
 readonly WORKING_DIRECTORY=$'\W'
 readonly ESC=$'\e'
 readonly YELLOW=$'33m'
-export PS1="[$COMMAND_HISTORY $WORKER \[$ESC[1;$YELLOW\]$WORKING_DIRECTORY\[$ESC[0m]\]@$ "
+export PS1="[$COMMAND_HISTORY $WORKER \[$ESC[1;$YELLOW\]$WORKING_DIRECTORY\[$ESC[m\]]@$ "
 
 ### lesspipeが実行できる場合
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
