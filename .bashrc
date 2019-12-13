@@ -43,10 +43,6 @@ readonly WORKER='\u'
 readonly WORKING_DIRECTORY='\W'
 readonly BOLD_YELLOW='\[\e[1;33m\]'
 readonly END='\[\e[m\]'
-# export PS1="[\e[1;32m\u\e[m@\h \W]\\$ "
-# PS1_COLOR_BEGIN="\[\e[1;32m\]"
-# PS1_COLOR_END="\[\e[m\]"
-# export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h \W]\\$ "
 export PS1="[$COMMAND_HISTORY $WORKER $BOLD_YELLOW$WORKING_DIRECTORY$END]@$ "
 
 ### lesspipeが実行できる場合
