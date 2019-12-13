@@ -38,12 +38,16 @@ HISTSIZE=100000 # シェル終了時までに保存される実行コマンド�
 ### 実行日時の書式形式
 HISTTIMEFORMAT='%y/%m/%d %H:%M:%S ' # YY/M/D/HH/MM/SS
 ###プロンプトの設定
-readonly COMMAND_HISTORY=$'\!'
-readonly WORKER=$'\u'
-readonly WORKING_DIRECTORY=$'\W'
-readonly ESC=$'\e'
-readonly YELLOW=$'33m'
-export PS1="[$COMMAND_HISTORY $WORKER \[$ESC[1;$YELLOW\]$WORKING_DIRECTORY\[$ESC[m\]]@$ "
+readonly COMMAND_HISTORY='\!'
+readonly WORKER='\u'
+readonly WORKING_DIRECTORY='\W'
+readonly BOLD_YELLOW='\[\e[1;33m\]'
+readonly END='\[\e[m\]'
+# export PS1="[\e[1;32m\u\e[m@\h \W]\\$ "
+# PS1_COLOR_BEGIN="\[\e[1;32m\]"
+# PS1_COLOR_END="\[\e[m\]"
+# export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h \W]\\$ "
+export PS1="[$COMMAND_HISTORY $WORKER $BOLD_YELLOW$WORKING_DIRECTORY$END]@$ "
 
 ### lesspipeが実行できる場合
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
