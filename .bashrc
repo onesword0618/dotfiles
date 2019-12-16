@@ -27,11 +27,9 @@ fi
 
 ## -- 対話モードで使う設定 -- ##
 shopt -s histappend                 # シェル終了時、HISTFILEの設定値分、ファイルの最後に追加する
-# shopt -s checkwinsize # 画面サイズを見ているらしい。デフォルトだとonになっている
 
 #### コマンド実行履歴の環境変数 ####
 ### コマンド実行履歴を保存する場所 デフォルトは~/.bash_history
-# HISTFILE=$HOME/.bash_history
 HISTFILESIZE=20000                  # ファイルに記録する最大行数
 HISTCONTROL=erasedups               # 全履歴で重複があった場合はそのコマンドを削除する
 HISTSIZE=100000                     # シェル終了時までに保存される実行コマンドの最大値
@@ -109,16 +107,13 @@ if ! shopt -oq posix; then
 fi
 ##--------------------------------##
 
-#### 対話的に扱うエイリアス ####
-## cp
-alias cp='cp -i'
-## mv
-alias mv='mv -i'
-## rm
-alias rm='rm -i'
+### 対話的に扱うエイリアス
+alias cp='cp -i' ## cp
+alias mv='mv -i' ## mv
+alias rm='rm -i' ## rm
 
 # SDKMAN
-export JAVA_HOME=$HOME/.sdkman/candidates/java/current # SDKMANで設定しているJAVA_HOME
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current # SDKMANでJAVA_HOMEを設定している
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.rbenv/bin:$PATH"
