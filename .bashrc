@@ -56,7 +56,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-### 下記の変数に``debian_chroot`を付与する
+### 下記の変数に`debian_chroot`を付与する
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
@@ -113,6 +113,14 @@ if ! shopt -oq posix; then
   fi
 fi
 ##--------------------------------##
+
+#### 対話的に扱うエイリアス ####
+## cp
+alias cp='cp -i'
+## mv
+alias mv='mv -i'
+## rm
+alias rm='rm -i'
 
 # SDKMAN
 export JAVA_HOME=$HOME/.sdkman/candidates/java/current # SDKMANで設定しているJAVA_HOME

@@ -18,9 +18,36 @@ function cdPwdLs() {
     ls -aF --color=auto
 }
 
+## apt の最新化作業
+function s() {
+    sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean
+}
+
 # --- エイリアス --- #
 ## 関数呼び出し
 alias cd=cdPwdLs
+alias stap=s
+
 
 ## ls
 alias ls='ls -aF --color=auto'
+
+## ..
+alias ..='cd ..'
+
+## vi -> vim
+alias vi='vim'
+
+## clear
+alias c='clear'
+
+## apt
+alias upd='sudo apt update'
+alias upg='sudo apt upgrade -y'
+alias rem='sudo apt remove -y'
+
+## exit
+alias q='exit'
+
+## Application ShortCut
+alias v='vim'

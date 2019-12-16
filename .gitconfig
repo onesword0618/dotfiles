@@ -16,7 +16,7 @@
 	ui = auto
 [commit]
 	gpgsign = true
-	template = /home/onesword0618/.git_commit_template.txt
+	template = ~/.git_commit_template.txt
 [help]
 	format = web
 [alias]
