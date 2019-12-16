@@ -13,9 +13,9 @@
 
 ##--- aliaseで扱う関数 -- ##
 function pwdColor() {
-    readonly PWD=$(pwd)
-    readonly PWD_COLOR='\e[32m'
-    readonly END_PWD_COLOR='\e[m\n'
+    PWD=$(pwd)
+    PWD_COLOR='\e[32m'
+    END_PWD_COLOR='\e[m\n'
     printf "${PWD_COLOR} ${PWD} ${END_PWD_COLOR}"
 }
 
