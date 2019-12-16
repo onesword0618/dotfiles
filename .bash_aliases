@@ -19,15 +19,14 @@ function cdPwdLs() {
 }
 
 ## apt の最新化作業
-function s() {
-    sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean
+function updateApt() {
+    sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean
 }
 
 # --- エイリアス --- #
 ## 関数呼び出し
 alias cd=cdPwdLs
-alias stap=s
-
+alias s=updateApt
 
 ## ls
 alias ls='ls -aF --color=auto'

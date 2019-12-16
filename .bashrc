@@ -56,11 +56,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-### 下記の変数に`debian_chroot`を付与する
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 ### TERM 下記条件の文字列が含まれていた場合
 #### ターミナル固有設定は`$TERM`の値で判断する
 case "$TERM" in
