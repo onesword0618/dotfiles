@@ -12,9 +12,17 @@
 # echo "read .bash_aliases";
 
 ##--- aliaseで扱う関数 -- ##
+function pwdColor() {
+    readonly PWD=$(pwd)
+    readonly PWD_COLOR='\e[32m'
+    readonly END_PWD_COLOR='\e[m\n'
+    printf "${PWD_COLOR} ${PWD} ${END_PWD_COLOR}"
+}
+
 ### ディレクトリの移動をした結果出力
 function cdPwdLs() {
     cd $1
+    pwdColor
     ls -aF --color=auto
 }
 ### apt の最新化作業
@@ -27,9 +35,9 @@ function updateApt() {
 alias cd=cdPwdLs
 alias s=updateApt
 alias ls='ls -aF --color=auto' ### ls
-alias ..='cd ..' ### ..
-alias vi='vim' ### vi -> vim
-alias c='clear' ### clear
+alias ..='cd ..'               ### ..
+alias vi='vim'                 ### vi -> vim
+alias c='clear'                ### clear
 
 ### apt
 alias upd='sudo apt update'
