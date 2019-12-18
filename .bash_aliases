@@ -27,7 +27,7 @@ function cdPwdLs() {
 }
 ### apt の最新化作業
 function updateApt() {
-    sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean
+    sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y
 }
 
 ## --- エイリアス --- ##
