@@ -34,10 +34,6 @@ function updateApt() {
 ### 関数呼び出し
 alias cd=cdPwdLs
 alias s=updateApt
-alias ls='ls -aF --color=auto' ### ls
-alias ..='cd ..'               ### ..
-alias vi='vim'                 ### vi -> vim
-alias c='clear'                ### clear
 
 ### apt
 alias upd='sudo apt update'
@@ -47,3 +43,10 @@ alias q='exit' ### exit
 
 ### Application ShortCut
 alias v='vim'
+alias vi='vim'                 ### vi -> vim
+alias ls='ls -aF --color=auto' ### ls
+alias ..='cd ..'               ### ..
+alias c='clear'                ### clear
+alias e='echo'
+alias xo=xdg-open
+alias reload='source $HOME/.profile && source $HOME/.bash_profile && source $HOME/.bashrc  && source $HOME/.bash_aliases echo "Reloaded"'
