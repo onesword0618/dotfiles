@@ -36,11 +36,11 @@ HISTSIZE=100000                     # シェル終了時までに保存される
 HISTTIMEFORMAT='%y/%m/%d %H:%M:%S ' # YY/M/D/HH/MM/SS
 
 #### プロンプトの設定 ####
-readonly COMMAND_HISTORY='\!'
-readonly WORKER='\u'
-readonly WORKING_DIRECTORY='\W'
-readonly BOLD_YELLOW='\[\e[1;33m\]'
-readonly END='\[\e[m\]'
+  COMMAND_HISTORY='\!'
+  WORKER='\u'
+  WORKING_DIRECTORY='\W'
+  BOLD_YELLOW='\[\e[1;33m\]'
+  END='\[\e[m\]'
 export PS1="[${COMMAND_HISTORY} ${WORKER} ${BOLD_YELLOW}${WORKING_DIRECTORY}${END}]@$ "
 
 ### lesspipeが実行できる場合

@@ -39,9 +39,9 @@ alias s=updateApt
 alias upd='sudo apt update'
 alias upg='sudo apt upgrade -y'
 alias rem='sudo apt remove -y'
-alias q='exit' ### exit
 
 ### Application ShortCut
+alias q='exit' ### exit
 alias v='vim'
 alias vi='vim'                 ### vi -> vim
 alias ls='ls -aF --color=auto' ### ls
@@ -50,3 +50,4 @@ alias c='clear'                ### clear
 alias e='echo'
 alias xo=xdg-open
 alias reload='source $HOME/.profile && source $HOME/.bash_profile && source $HOME/.bashrc  && source $HOME/.bash_aliases echo "Reloaded"'
+alias mkdir='mkdir -v'
