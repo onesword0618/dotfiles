@@ -42,6 +42,7 @@ alias rem='sudo apt remove -y'
 
 ### Application ShortCut
 alias q='exit' ### exit
+alias cat='cat -n' ### Display numver
 alias v='vim'
 alias vi='vim'                 ### vi -> vim
 alias ls='ls -aF --color=auto' ### ls
