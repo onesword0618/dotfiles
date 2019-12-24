@@ -40,15 +40,36 @@ alias upd='sudo apt update'
 alias upg='sudo apt upgrade -y'
 alias rem='sudo apt remove -y'
 
+### ls ... list segments
+#### man ls
+alias ls='ls -AF --color=auto'
+alias la='ls -AlF --color=auto'
+alias lsr='ls -Rh'
+alias lg='ls -gnot'
+alias lm='ls -m' ### Display comma
+
+### mkdir ... make directories
+#### man mkdir
+alias mkdir='mkdir -pv' ### make parent dir and  print a message
+
+### cat ... concatenate files and print on the standard output
+#### man cat
+alias cat='cat -n' ### Display number
+
+### less ... opposite of more
+#### man less
+alias less='less -X'
+
+### wc ... print newline, word, and byte counts for each file
+#### man wc
+alias wc='wc -lwc' ### line word byte
+
 ### Application ShortCut
 alias q='exit' ### exit
-alias cat='cat -n' ### Display numver
 alias v='vim'
 alias vi='vim'                 ### vi -> vim
-alias ls='ls -aF --color=auto' ### ls
 alias ..='cd ..'               ### ..
 alias c='clear'                ### clear
 alias e='echo'
 alias xo=xdg-open
 alias reload='source $HOME/.profile && source $HOME/.bash_profile && source $HOME/.bashrc  && source $HOME/.bash_aliases echo "Reloaded"'
-alias mkdir='mkdir -v'
