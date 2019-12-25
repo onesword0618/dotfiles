@@ -64,6 +64,10 @@ alias less='less -X'
 #### man wc
 alias wc='wc -lwc' ### line word byte
 
+### head ... output the first part of files
+#### man head
+alias head='head -v'
+
 ### Application ShortCut
 alias q='exit' ### exit
 alias v='vim'
