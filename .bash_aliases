@@ -12,6 +12,7 @@
 # echo "read .bash_aliases";
 
 ##--- aliaseで扱う関数 -- ##
+### pwd で出力した結果に色を追加する
 function pwdColor() {
     PWD=$(pwd)
     PWD_COLOR='\e[32m'
@@ -19,6 +20,19 @@ function pwdColor() {
     printf "${PWD_COLOR} ${PWD} ${END_PWD_COLOR}"
 }
 
+### 設定ファイルの再読込を行う
+function reloadDotfiles() {
+    source $HOME/.profile &&
+        source $HOME/.bash_profile &&
+        source $HOME/.bashrc &&
+        source $HOME/.bash_aliases &&
+        echo "Reloaded"
+}
+
+### ホームディレクトリのサイズを算出する
+function homeDirSize() {
+    du -h ~ | tail -n 1
+}
 ### ディレクトリの移動をした結果出力
 function cdPwdLs() {
     cd $1
@@ -27,13 +41,18 @@ function cdPwdLs() {
 }
 ### apt の最新化作業
 function updateApt() {
-    sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y
+    sudo apt update &&
+        sudo apt full-upgrade -y &&
+        sudo apt autoremove -y &&
+        sudo apt clean -y
 }
 
 ## --- エイリアス --- ##
 ### 関数呼び出し
+alias homesize=homeDirSize
 alias cd=cdPwdLs
 alias s=updateApt
+alias reload=reloadDotfiles
 
 ### apt
 alias upd='sudo apt update'
@@ -46,7 +65,7 @@ alias ls='ls -AF --color=auto'
 alias la='ls -AlF --color=auto'
 alias lsr='ls -Rh'
 alias lg='ls -gnot'
-alias lm='ls -m' ### Display comma
+alias lm='ls -m'        ### Display comma
 
 ### mkdir ... make directories
 #### man mkdir
@@ -68,12 +87,16 @@ alias wc='wc -lwc' ### line word byte
 #### man head
 alias head='head -v'
 
+### tail ... output the last part of files
+#### man tail
+alias tail='tail -v'
+alias track='tail -vf' ### stop ctrl +c
+
 ### Application ShortCut
 alias q='exit' ### exit
 alias v='vim'
-alias vi='vim'                 ### vi -> vim
-alias ..='cd ..'               ### ..
-alias c='clear'                ### clear
+alias vi='vim'   ### vi -> vim
+alias ..='cd ..' ### ..
+alias c='clear'  ### clear
 alias e='echo'
 alias xo=xdg-open
-alias reload='source $HOME/.profile && source $HOME/.bash_profile && source $HOME/.bashrc  && source $HOME/.bash_aliases echo "Reloaded"'
