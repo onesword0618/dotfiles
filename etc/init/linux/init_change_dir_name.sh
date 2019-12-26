@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Changing Lamguage japanese directory -> english directory
+# Changing Language japanese directory -> english directory
 
 # Use Ubuntu
 lsb_release -d -r
