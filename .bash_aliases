@@ -12,7 +12,6 @@
 # echo "read .bash_aliases";
 
 ##--- aliaseで扱う関数 -- ##
-### pwd で出力した結果に色を追加する
 function pwdColor() {
     PWD=$(pwd)
     PWD_COLOR='\e[32m'
@@ -20,7 +19,12 @@ function pwdColor() {
     printf "${PWD_COLOR} ${PWD} ${END_PWD_COLOR}"
 }
 
-### 設定ファイルの再読込を行う
+function cdPwdLs() {
+    cd $1
+    pwdColor
+    ls -aF --color=auto
+}
+
 function reloadDotfiles() {
     source $HOME/.profile &&
         source $HOME/.bash_profile &&
@@ -29,17 +33,10 @@ function reloadDotfiles() {
         echo "Reloaded"
 }
 
-### ホームディレクトリのサイズを算出する
 function homeDirSize() {
     du -h ~ | tail -n 1
 }
-### ディレクトリの移動をした結果出力
-function cdPwdLs() {
-    cd $1
-    pwdColor
-    ls -aF --color=auto
-}
-### apt の最新化作業
+
 function updateApt() {
     sudo apt update &&
         sudo apt full-upgrade -y &&
