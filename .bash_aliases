@@ -44,7 +44,7 @@ function updateApt() {
         sudo apt clean -y
 }
 
-## --- エイリアス --- ##
+## --- alias --- ##
 ### 関数呼び出し
 alias homesize=homeDirSize
 alias cd=cdPwdLs
@@ -87,7 +87,11 @@ alias head='head -v'
 ### tail ... output the last part of files
 #### man tail
 alias tail='tail -v'
-alias track='tail -vf' ### stop ctrl +c
+alias track='tail -vf'        ### stop ctrl +c
+
+### ln ... make links between files
+#### man ln
+alias ln='ln -s'              ### make symbolic
 
 ### Application ShortCut
 alias q='exit' ### exit
