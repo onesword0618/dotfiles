@@ -6,4 +6,4 @@ set term=$TERM
 set scroll=11
 filetype off
 set ttyfast!
-"syntax off
+syntax off
