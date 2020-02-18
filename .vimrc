@@ -1,3 +1,6 @@
+"""kill default setting
+set all&
+
 """ basic
 filetype on
 syntax on
