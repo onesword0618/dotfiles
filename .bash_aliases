@@ -44,12 +44,17 @@ function updateApt() {
         sudo apt clean -y
 }
 
+function makeJavaProject() {
+    mkdir src/main/java src/main/resources src/test/java src/test/resources
+}
+
 ## --- alias --- ##
 ### 関数呼び出し
 alias homesize=homeDirSize
 alias cd=cdPwdLs
 alias s=updateApt
 alias reload=reloadDotfiles
+alias javapro=makeJavaProject
 
 ### apt
 alias upd='sudo apt update'
@@ -62,7 +67,7 @@ alias ls='ls -AF --color=auto'
 alias la='ls -AlF --color=auto'
 alias lsr='ls -Rh'
 alias lg='ls -gnot'
-alias lm='ls -m'        ### Display comma
+alias lm='ls -m' ### Display comma
 
 ### mkdir ... make directories
 #### man mkdir
@@ -87,11 +92,11 @@ alias head='head -v'
 ### tail ... output the last part of files
 #### man tail
 alias tail='tail -v'
-alias track='tail -vf'        ### stop ctrl +c
+alias track='tail -vf' ### stop ctrl +c
 
 ### ln ... make links between files
 #### man ln
-alias ln='ln -s'              ### make symbolic
+alias ln='ln -s' ### make symbolic
 
 ### Application ShortCut
 alias q='exit' ### exit
