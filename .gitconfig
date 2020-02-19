@@ -31,3 +31,4 @@
 	f = fetch
 	fp = fetch --prune
 	df = diff
+	cach = rm -r --cached .
