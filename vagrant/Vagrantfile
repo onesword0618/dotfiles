@@ -1,0 +1,59 @@
+# Vagrant Configure File
+## onesword0618
+
+### Requre Vagrant Version
+Vagrant.require_version ">= 2.2.7"
+
+### Vagrant configu re version
+#### Using "config"
+Vagrant.configure("2") do |config|
+
+### Remote-VM
+##### config.vim
+  config.vim.define "remote" do |remote|
+    remote.vim.box = "Ubuntu_19.10_eoan"
+    remote.vim.box_check_update = false
+    remote.vm.hostname = "devlopments-remote"
+    remote.vm.network "private_network", ip: "172.16.97.102"
+    remote.vm.synced_folder "../develop", "/vagrant_data"
+
+    ##### provider
+    remote.vim.provider "virtualbox" do |vb|
+      vb.name = "developments"
+      vb.memory = 6144 # 1GB = 1024MB
+      vb.gui = true
+      vb.cpus = 2
+      vb.customize [
+        "modifyvm", :id,
+        "--vram", "256",
+        "--clipboard", "bidirectional",
+        "--accelerate3d", "on",
+        "--hwvirtex", "on",
+        "--nestedpaging", "on",
+        "--largepages", "on",
+        "--ioapic", "on",
+        "--pae", "on",
+        "--paravirtprovider", "kvm",
+      ]
+    end
+
+    remote.vm.provision "shell", inline: <<-EOS
+      wget -q https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -O- | sudo apt-key add -
+      wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | sudo apt-key add -
+      sudo wget https://www.ubuntulinux.jp/sources.list.d/bionic.list -O /etc/apt/sources.list.d/ubuntu-ja.list
+      sudo apt update
+      sudo apt upgrade -y
+      sudo apt full-upgrade -y
+      sudo apt autoremove -y
+      sudo apt autoclean
+      sudo apt clean
+      sudo apt　install -y ubuntu-desktop ubuntu-defaults-ja aptitude curl dnsutils lsof zip unzip lsb-release tree man
+      sudo timedatectl set-timezone Asia/Tokyo
+      sudo update-alternatives --set editor $(update-alternatives --list editor | grep 'vim.basic')
+    EOS
+  end
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  # config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "public_network"
+end
