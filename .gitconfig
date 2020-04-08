@@ -32,4 +32,9 @@
 	fp = fetch --prune
 	df = diff
 	trash = rm -r --cached .
-        new = switch -c
+    new = switch -c
+[includeIf "gitdir:~/workspace/"]
+    path = ~/.dotfiles/git/gitconfig.gitlab
+[filesystem "Ubuntu|11.0.6|/dev/sda1"]
+    timestampResolution = 12000 nanoseconds
+    minRacyThreshold = 3921 microseconds

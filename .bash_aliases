@@ -45,7 +45,7 @@ function updateApt() {
 }
 
 function makeJavaProject() {
-    mkdir src/main/java src/main/resources src/test/java src/test/resources
+    mkdir -p "src/main/java" "src/main/resources" "src/test/java" "src/test/resources"
 }
 
 ## --- alias --- ##
