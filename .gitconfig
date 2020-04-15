@@ -16,7 +16,7 @@
     ui = auto
 [commit]
     gpgsign = true
-    template = ~/.dotfiles/git/template/.git_commit_template.txt
+    template = ~/dotfiles/git/template/.git_commit_template.txt
 [help]
     format = web
 [alias]
@@ -34,7 +34,7 @@
     trash = rm -r --cached .
     new = switch -c
 [includeIf "gitdir:~/workspace/"]
-    path = ~/.dotfiles/git/config/gitconfig.gitlab
+    path = ~/dotfiles/git/config/gitconfig.gitlab
 [filesystem "Ubuntu|11.0.6|/dev/sda1"]
     timestampResolution = 12000 nanoseconds
     minRacyThreshold = 3921 microseconds
