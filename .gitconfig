@@ -1,40 +1,40 @@
 [user]
-	name = onesword0618
-	email = ao.akua.leo@gmail.com
-	signingkey = E2F30CEB4AEE75BE
+    name = onesword0618
+    email = ao.akua.leo@gmail.com
+    signingkey = E2F30CEB4AEE75BE
 [core]
-	editor = vim -c \"set fenc=utf=8\"
-	ignoreCase = true
-	fsmonitor = true
-	trustctime = true
-	quotePath = false
-	autocrlf = false
-	symlinks = true
+    editor = vim -c \"set fenc=utf=8\"
+    ignoreCase = true
+    fsmonitor = true
+    trustctime = true
+    quotePath = false
+    autocrlf = false
+    symlinks = true
 [web "browser"]
-	cmd = google-chrome
+    cmd = google-chrome
 [color]
-	ui = auto
+    ui = auto
 [commit]
-	gpgsign = true
-	template = ~/.git_commit_template.txt
+    gpgsign = true
+    template = ~/dotfiles/git/template/.git_commit_template.txt
 [help]
-	format = web
+    format = web
 [alias]
-	h = help -a
-	ls = ls-files
-	st = status
-	sb = status -sb
-	test = add --dry-run .
-	b = branch
-	ba = branch -a
-	co = checkout
-	f = fetch
-	fp = fetch --prune
-	df = diff
-	trash = rm -r --cached .
+    h = help -a
+    ls = ls-files
+    st = status
+    sb = status -sb
+    test = add --dry-run .
+    b = branch
+    ba = branch -a
+    co = checkout
+    f = fetch
+    fp = fetch --prune
+    df = diff
+    trash = rm -r --cached .
     new = switch -c
 [includeIf "gitdir:~/workspace/"]
-    path = ~/.dotfiles/git/gitconfig.gitlab
+    path = ~/dotfiles/git/config/gitconfig.gitlab
 [filesystem "Ubuntu|11.0.6|/dev/sda1"]
     timestampResolution = 12000 nanoseconds
     minRacyThreshold = 3921 microseconds
