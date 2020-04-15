@@ -3,4 +3,4 @@
     email = kenichi.inoue@sharing-innovations.co.jp
 [commit]
     gpgsign = false
-    template = ~/.dotfiles/git/template/.gitlab_commit_template.txt
+    template = ~/dotfiles/git/template/.gitlab_commit_template.txt
