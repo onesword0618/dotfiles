@@ -65,7 +65,7 @@ fi
 ##  cp
 alias cp='cp -i'
 ##  mv
-alias mv='mv -i'
+alias mv='mv -iv'
 ##  rm
 alias rm='rm -i'
 
