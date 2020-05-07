@@ -106,3 +106,4 @@ alias ..='cd ..' #  ..
 alias c='clear'  #  clear
 alias e='echo'
 alias xo=xdg-open
+alias sn=shutdown -h now
