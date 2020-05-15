@@ -75,7 +75,7 @@ alias mkdir='mkdir -pv' #  make parent dir and  print a message
 
 ###  cat ... concatenate files and print on the standard output
 #### man cat
-alias cat='cat -n' #  Display number
+alias cat='cat -nv' #  Display number
 
 ### less ... opposite of more
 #### man less
@@ -105,5 +105,4 @@ alias vi='vim'   #  vi -> vim
 alias ..='cd ..' #  ..
 alias c='clear'  #  clear
 alias e='echo'
-alias xo=xdg-open
-alias sn=shutdown -h now
+alias xo='xdg-open'

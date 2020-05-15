@@ -15,7 +15,26 @@ set backspace=indent,eol,start
 set showmatch
 set cmdheight=2
 set helpheight=999
+set clipboard=unnamedplus "system clipboard
+
+""" indent
+set foldmethod=indent
 
 """ commandline↲
 set wildmenu wildmode=list:longest,full
 set history=10000
+
+""" key mapping
+""" moving windows
+noremap <c-h> <c-w><c-h>
+noremap <c-j> <c-w><c-j>
+noremap <c-k> <c-w><c-k>
+noremap <c-l> <c-w><c-l>
+
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+inoremap ( ()<esc>i
+inoremap { {}<esc>i
+inoremap [ []<esc>i
+
+let mapleader=','
