@@ -1,8 +1,18 @@
-#  --- 説明 --- #
+#
+#   #####      ##      ####    ##  ##   #####     #### #
+#   ##  ##    ####    ##  ##   ##  ##   ##  ##   ##  ## #
+#   ##  ##   ##  ##   ##       ##  ##   ##  ##   ## #
+#   #####   #####    ####   #####   #####    ## #
+#   ##  ##   ##  ##       ##   ##  ##   ####     ## #
+#   ##  ##   ##  ##   ##  ##   ##  ##   ## ##    ##  ## #
+#   #####    ##  ##    ####    ##  ##   ##  ##    #### #
+#
+
+#  --- Description --- #
 #  .bashrc
 #   bashに依存する対話モードの時に読み込まれるファイル
 
-#  --- 見出し --- #
+#  --- Headline --- #
 #  検証用
 #  対話モードチェック
 #  エイリアス設定ファイルチェック
@@ -15,8 +25,8 @@
 ##  -- 対話モードチェック -- ##
 #  オプションで-iを使う場合(対話モード)に読み込まれる
 case $- in
-  *i*) ;;
-  *) return ;;
+*i*) ;;
+*) return ;;
 esac
 
 ##  -- エイリアス設定ファイルチェック -- ##
@@ -43,11 +53,11 @@ HISTSIZE=100000
 HISTTIMEFORMAT='%y/%m/%d %H:%M:%S '
 
 ###  プロンプトの設定
-  COMMAND_HISTORY='\!'
-  WORKER='\u'
-  WORKING_DIRECTORY='\W'
-  BOLD_YELLOW='\[\e[1;33m\]'
-  END='\[\e[m\]'
+COMMAND_HISTORY='\!'
+WORKER='\u'
+WORKING_DIRECTORY='\W'
+BOLD_YELLOW='\[\e[1;33m\]'
+END='\[\e[m\]'
 export PS1="[${COMMAND_HISTORY} ${WORKER} ${BOLD_YELLOW}${WORKING_DIRECTORY}${END}]@$ "
 
 ###  lesspipeが実行できる場合
@@ -75,4 +85,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-

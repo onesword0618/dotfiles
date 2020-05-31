@@ -98,6 +98,10 @@ alias track='tail -vf' #  stop ctrl +c
 #### man ln
 alias ln='ln -s' #  make symbolic
 
+### grep
+#### man grep
+alias grep='grep --color=auto'
+
 ### Application ShortCut
 alias q='exit' #  exit
 alias v='vim'
