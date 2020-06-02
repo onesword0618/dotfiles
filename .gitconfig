@@ -17,6 +17,8 @@
 [commit]
     gpgsign = true
     template = ~/dotfiles/git/template/.git_commit_template.txt
+[pull]
+    rebase = false
 [help]
     format = web
 [alias]
@@ -39,6 +41,3 @@
     trash = rm -r --cached .
 [includeIf "gitdir:~/workspace/"]
     path = ~/dotfiles/git/config/gitconfig.gitlab
-[filesystem "Ubuntu|11.0.6|/dev/sda1"]
-    timestampResolution = 12000 nanoseconds
-    minRacyThreshold = 3921 microseconds
