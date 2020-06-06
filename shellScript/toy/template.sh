@@ -4,6 +4,25 @@
 # How to Use
 # Author
 
+# Usage
+function usage {
+    cat <<EOF
+$(basename ${0}) is a tool for ...
+
+Usage:
+    $(basename ${0}) [command] [<options>]
+
+Options:
+    --version, -v     print $(basename ${0}) version
+    --help, -h        print this
+EOF
+}
+
+# err
+err() {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
+}
+
 ## resource 
 ### 文字列変数を宣言する際には，引用符でくくること。
 ### $varではなく，可読性と保守性とバグ防止のため，常に${var}とすること。
