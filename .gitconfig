@@ -2,6 +2,61 @@
     name = onesword0618
     email = ao.akua.leo@gmail.com
     signingkey = E2F30CEB4AEE75BE
+[advice]
+    # git-fetchの強制更新で時間がかかっている場合の警告
+    fetchShowForcedUpdates = true
+    # git-pushの更新拒否が発生した場合の警告
+    pushUpdateRejected = true
+    # git-pushに失敗した場合の警告
+    pushNonFFCurrent = true
+    # git-pushを実行時に現在のブランチでないものを指定した場合の警告
+    pushNonFFMatching = true
+    # git-pushでfast-forwardingできないtagの更新拒否が発生した場合の警告
+    pushAlreadyExists = true
+    # git-pushで更新拒否が発生した場合の警告
+    pushFetchFirst = true
+    # git-pushでコミットしていないオブジェクトを参照し更新拒否した場合の警告
+    pushNeedsForce = true
+    # git-pushで名前空間の推測をやめた場合の警告
+    pushUnqualifiedRefname = true
+    # git-statusの追跡計算で時間がかかっていた場合の警告
+    statusAheadBehind = true
+    # git-status,git-commitで進行指示を提示する
+    statusHints = true
+    # git-status実行時に、未追跡のファイルを表示するのに2秒以上かかった場合に-uをつけることを進めることを提示する
+    statusUoption = true
+    # git-merge実行時に、マージが拒否された場合にローカルの変更を上書きをしないことを提示する
+    commitBeforeMerge = true
+    # git-resetに--quietを使用することを提示する
+    resetQuiet = true
+    # コンフリクトが発生して操作ができない場合のコマンドを提示する
+    resolveConflict = true
+    # シーケンスが発生していることを表示する
+    sequencer = true
+    # 自分の情報が推測された場合の設定方法を提示する
+    implicitIdentity = true
+    # git-switch,git-checkoutを使用してdetach HEADになった場合のローカルブランチの提示をする
+    detachedHead = true
+    # git-switch,git-checkoutの引数があいまいだった場合の行動を提示する
+    checkoutAmbiguousRemoteBranchName = true
+    # git-am失敗時にパッチファイルの場所を提示する
+    amWorkDir = true
+    # git-rmに失敗した場合の現在の状態から進める指示を提示する
+    rmHints = true
+    # 他のリポジトリに追加した場合の対処を提示する
+    addEmbeddedRepo = true
+    # hookの設定が無視された場合の対応を提示する
+    ignoredHook = true
+    # gitがユーザからのエディタ入力を待っている時にターミナルに出力する
+    waitingForEditor = true
+    # タグにタグを重ねた場合に提示する
+    nestedTag = true
+    # submodule.alternateErrorStrategyにdieに設定してエラーが発生した場合に表示する
+    submoduleAlternateErrorStrategyDie = true
+    # ignoreに設定しているファイルを追加した場合に表示する
+    addIgnoredFile = true
+    # addにパスを設定していない場合に表示する
+    addEmptyPathspec = true
 [core]
     editor = vim -c \"set fenc=utf=8\"
     ignoreCase = true
@@ -12,6 +67,79 @@
     symlinks = true
 [web "browser"]
     cmd = google-chrome
+#[add]
+#[am]
+#[apply]
+#[blame]
+#[branch]
+#[checkout]
+#[clean]
+#[column]
+#[credential]
+#[credentialCache]
+#[completion]
+#[diff]
+#[difftool]
+#[fastimport]
+#[feature]
+#[fetch]
+#[format]
+#[filter]
+#[fsck]
+#[gc]
+#[gitcvs]
+#[gitweb]
+#[grep]
+#[gpg]
+#[gui]
+#[guitool]
+#[help]
+#[http]
+#[i18n]
+#[imap]
+#[index]
+#[init]
+#[instaweb]
+#[interactive]
+#[log]
+#[mailinfo]
+#[mailmap]
+#[man]
+#[merge]
+#[mergetool]
+#[notes]
+#[pack]
+#[pager]
+#[pretty]
+#[protocol]
+#[pull]
+#[push]
+#[rebase]
+#[receive]
+#[remote]
+#[remotes]
+#[repack]
+#[rerere]
+#[reset]
+#[sendemail]
+#[sequence]
+#[showBranch]
+#[splitIndex]
+#[ssh]
+#[status]
+#[stash]
+#[submodule]
+#[tag]
+#[tar]
+#[trace2]
+#[transfer]
+#[uploadarchive]
+#[uploadpack]
+#[url]
+#[author]
+#[committer]
+#[versionsort]
+#[worktree]
 [color]
     ui = auto
 [commit]
@@ -40,4 +168,5 @@
     test = add --dry-run .
     trash = rm -r --cached .
 [includeIf "gitdir:~/workspace/"]
+    # https://git-scm.com/docs/git-config#_conditional_includes
     path = ~/dotfiles/git/config/gitconfig.gitlab
