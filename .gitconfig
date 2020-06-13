@@ -88,9 +88,80 @@
     # テキストの行末の種類を検出する /autocrlfがtrueの場合は無視される
     safecrlf = warn
     # 行末変換が可能な場合にCRLFに変換することができるかどうか
-    editor = vim -c \"set fenc=utf=8\"
     autocrlf = false
+    # text属性をautoにし、eolをcrlfに設定するのと同じにするかどうか
+    checkRoundtripEncoding = SHIFT-JIS
+    # カンマまたは空白のエンコーディング
     symlinks = true
+    # falseだとリンクテキストを含んだプレーンテキストとしてチェックアウトする
+    # gitProxy
+    # プロキシコマンドの設定
+    # sshCommand
+    # ssh接続の代わりにコマンドを実行する
+    ignoreStat = false
+    # gitの外で変更したファイルを検出するかどうか
+    preferSymlinkRefs = false
+    # HEADがシンボリックリンクであることｗ期待している古いスクリプトを起動させるときに利用する
+    # alternateRefsCommand
+    # 未調査
+    # alternateRefsPrefixes
+    # 未調査
+    bare = false
+    # trueの場合は、作業ディレクトリが存在しないとみなされる
+    # worktree
+    # 作業ツリーのルートパスを設定する
+    logAllRefUpdates = true
+    # reflogを有効にするかどうか
+    # repositoryFormatVersion
+    # リポジトリのフォーマットとバージョンを設定する
+    sharedRepository = false
+    # リポジトリの共有範囲を設定する
+    warnAmbiguousRefs = true
+    # refの曖昧検索を有効にする
+    compression = 3
+    # 圧縮レベルの設定を行う
+    looseCompression = 1
+    # パックファイルにないオブジェクトの圧縮レベルを設定する
+    # packedGitWindowSize = 1g
+    # マッピング操作でパックファイルをメモリに乗せるバイト数
+    # packedGitLimit
+    # マッピング操作で確保する仮想アドレス空間
+    # deltaBaseCacheLimit
+    # ベースオブジェクトのキャッシュするために確保するバイト数
+    # bigFileThreshold
+    # デルタ圧縮を実行するかどうかの判断するサイズ数
+    # excludesFile
+    # 追跡対象外のパスを記載するパターンを含むファイルパスを指定する
+    # askPass
+    # 対話的にパスワードを要求するコマンドを利用する場合に設定した値を利用する
+    # attributesFile
+    # このファイルの属性を調査する. 何をするかは未調査
+    # hooksPath
+    # $GIT_DIR/hooksディレクトリではなくこちらで指定した場所で探そうとする
+    editor = vim -c \"set fenc=utf=8\"
+    # メッセージを編集させる場合に利用するエディタを利用する
+    # commentChar
+    # デフォルトは#
+    filesRefLockTimeout=100
+    # 個々の参照を再試行する時間をミリ秒単位で指定する
+    packedRefsTimeout=100
+    # ファイルロックの再試行する時間をミリ秒単位で指定します
+    pager=less
+    # ページャのコマンドを指定する
+    whitespace=space-before-tab,trailing-space
+    # 空白とタブの位置が指定した値を満たした場合に、エラーになる
+    fsyncObjectFiles=true
+    # オブジェクトファイルの書き込み時にfsync()を有効にする
+    preloadIndex=true
+    # 並列インデックスのプリロードを有効にする
+    # createObject
+    # 未調査
+    notesRef="refs/notes/commits"
+    # 未調査
+    # sparseCheckout
+    # 未調査
+    abbrev=auto
+    # オブジェクト名が省略される長さを設定します
 [web "browser"]
     cmd = google-chrome
 #[add]
