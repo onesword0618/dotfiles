@@ -145,7 +145,7 @@
     filesRefLockTimeout=100
     # 個々の参照を再試行する時間をミリ秒単位で指定する
     packedRefsTimeout=100
-    # ファイルロックの再試行する時間をミリ秒単位で指定します
+    # ファイルロックの再試行する時間をミリ秒単位で指定する
     pager=less
     # ページャのコマンドを指定する
     whitespace=space-before-tab,trailing-space
@@ -161,19 +161,103 @@
     # sparseCheckout
     # 未調査
     abbrev=auto
-    # オブジェクト名が省略される長さを設定します
-[web "browser"]
-    cmd = google-chrome
-#[add]
-#[am]
-#[apply]
-#[blame]
-#[branch]
+    # オブジェクト名が省略される長さを設定する
+[am]
+    keepcr=true
+    # 未調査
+    threeWay=false
+    # 未調査
+[apply]
+    ignoreWhitespace=false
+    # 空白の変更を検知するようになる
+    whitespace=warn
+    # 空白に対しての動作を定義する
+[blame]
+    showRoot=false
+    # ルートコミットを境界線として扱わないようする
+    blankBoundary=false
+    # 境界コミットのコミットオブジェクト名を空白にするかどうか
+    showEmail=false
+    # 作成者の名前の代わりにメールアドレスを表示するようにするかどうか
+    date=iso
+    # 日付出力のフォーマットを定義する
+[branch]
+    autoSetupMerge=true
+    # 新しいブランチを作成するときに適切にマージをするようにする
+    autoSetupRebase=never
+    # 新しいブランチを作成するときに適切にリベースをするようにする
+[web]
+    browser=chrome
+    #cmd="/usr/bin/google-chrome"
+[clean]
+    requireForce=true
+    # f、-i あるいは -n が与えられない限り git-clean を何もしないようにする
+[color]
+    branch=auto
+    diff=always
+    colorMoved=true
+    ui=auto
+    grep=always
+    interactive=always
+    pager=true
+    showBranch=true
+    status=always
+    # current,local,remote,upstream,plain
+[column]
+    ui=always
+    branch=always
+    clean=always
+    status=always
+    tag=always
+[commit]
+    status=true
+    gpgsign=true
+    template = ~/dotfiles/git/template/.git_commit_template.txt
+    #cleanup
+    #verbose
+[credential]
+    useHttpPath=false
+    #helper
+    #username
+[credentialCache]
+    #ignoreSIGHUP
+[pull]
+    ff=true
+    rebase=false
+[push]
+    default=current
+    gpgSign=true
+[rebase]
+    stat=false
+    autoSquash=false
+    autoStash=false
+    missingCommitsCheck=warn
+    abbreviateCommands=false
+[help]
+    format = web
+[alias]
+    b = branch
+    ba = branch -a
+    br = branch -r
+    bm = branch -m
+    be = branch --edit-description
+    co = checkout
+    df = diff
+    edit = config -e
+    f = fetch
+    fp = fetch --prune
+    h = help -a
+    list = config -l
+    ls = ls-files
+    new = switch -c
+    st = status
+    sb = status -sb
+    test = add --dry-run .
+    trash = rm -r --cached .
+[includeIf "gitdir:~/workspace/"]
+    # https://git-scm.com/docs/git-config#_conditional_includes
+    path = ~/dotfiles/git/config/gitconfig.gitlab
 #[checkout]
-#[clean]
-#[column]
-#[credential]
-#[credentialCache]
 #[completion]
 #[diff]
 #[difftool]
@@ -209,9 +293,6 @@
 #[pager]
 #[pretty]
 #[protocol]
-#[pull]
-#[push]
-#[rebase]
 #[receive]
 #[remote]
 #[remotes]
@@ -237,33 +318,3 @@
 #[committer]
 #[versionsort]
 #[worktree]
-[color]
-    ui = auto
-[commit]
-    gpgsign = true
-    template = ~/dotfiles/git/template/.git_commit_template.txt
-[pull]
-    rebase = false
-[help]
-    format = web
-[alias]
-    b = branch
-    ba = branch -a
-    br = branch -r
-    bm = branch -m
-    co = checkout
-    df = diff
-    edit = config -e
-    f = fetch
-    fp = fetch --prune
-    h = help -a
-    list = config -l
-    ls = ls-files
-    new = switch -c
-    st = status
-    sb = status -sb
-    test = add --dry-run .
-    trash = rm -r --cached .
-[includeIf "gitdir:~/workspace/"]
-    # https://git-scm.com/docs/git-config#_conditional_includes
-    path = ~/dotfiles/git/config/gitconfig.gitlab
