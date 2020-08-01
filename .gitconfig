@@ -226,7 +226,7 @@
     rebase=false
 [push]
     default=current
-    gpgSign=true
+    gpgSign=false # 2018年にサポートしなくなっている
 [rebase]
     stat=false
     autoSquash=false
