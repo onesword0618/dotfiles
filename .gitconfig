@@ -1,7 +1,7 @@
 [user]
     name = onesword0618
     email = ao.akua.leo@gmail.com
-    signingkey = E2F30CEB4AEE75BE
+    signingkey = 5AFBEB0A92CA623F
 [advice]
     fetchShowForcedUpdates = true
     # git-fetchの強制更新で時間がかかっている場合の警告
