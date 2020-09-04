@@ -1,0 +1,24 @@
+{
+    // ダーティ ファイルの自動保存を制御します。有効な値: 'off'、'afterDelay'、'onFocusChange' (エディターがフォーカスを失います)、'onWindowChange' (ウィンドウがフォーカスを失います)。'afterDelay' に設定すると、'files.autoSaveDelay' で遅延を構成できます。
+    "files.autoSave": "onFocusChange",
+
+    // ファイルとフォルダーを除外するための glob パターンを構成します。
+    "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+
+  "editor.accessibilityPageSize": 14,
+  "editor.fontFamily": "'Ricty Diminished'",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.associations": {
+    "*.cnf": "ini"
+  },
+  "todo-tree.tree.showScanModeButton": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Electron Highlighter"
+}
