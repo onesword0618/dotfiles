@@ -20,5 +20,6 @@
   },
   "todo-tree.tree.showScanModeButton": false,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Electron Highlighter"
+  "workbench.colorTheme": "Monokai",
+  "editor.formatOnSave": true
 }
