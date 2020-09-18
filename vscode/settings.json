@@ -21,5 +21,6 @@
   "todo-tree.tree.showScanModeButton": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Monokai",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.columnSelection": true
 }
