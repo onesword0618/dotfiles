@@ -22,5 +22,5 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Monokai",
   "editor.formatOnSave": true,
-  "editor.columnSelection": true
+  "editor.formatOnSaveMode": "modifications"
 }
