@@ -1,26 +1,32 @@
 {
-    // ダーティ ファイルの自動保存を制御します。有効な値: 'off'、'afterDelay'、'onFocusChange' (エディターがフォーカスを失います)、'onWindowChange' (ウィンドウがフォーカスを失います)。'afterDelay' に設定すると、'files.autoSaveDelay' で遅延を構成できます。
-    "files.autoSave": "onFocusChange",
-
-    // ファイルとフォルダーを除外するための glob パターンを構成します。
-    "files.exclude": {
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true
   },
-
   "editor.accessibilityPageSize": 14,
   "editor.fontFamily": "'Ricty Diminished'",
   "editor.suggestSelection": "first",
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "editor.multiCursorMergeOverlapping": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.associations": {
     "*.cnf": "ini"
   },
-  "todo-tree.tree.showScanModeButton": false,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Monokai",
-  "editor.formatOnSave": true,
-  "editor.columnSelection": true
+  "workbench.colorTheme": "Atom Material Theme",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": false,
+  "files.trimFinalNewlines": false,
+  "workbench.editorAssociations": [],
+  "window.zoomLevel": 0,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "editor.tabSize": 1,
+  "workbench.iconTheme": "material-icon-theme",
 }
