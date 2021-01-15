@@ -29,4 +29,7 @@
   },
   "editor.tabSize": 1,
   "workbench.iconTheme": "material-icon-theme",
+  "editor.renderIndentGuides": false,
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "http://localhost:8080",
 }
