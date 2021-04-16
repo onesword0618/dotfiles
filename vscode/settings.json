@@ -18,7 +18,7 @@
     "*.cnf": "ini"
   },
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Atom Material Theme",
+  "workbench.colorTheme": "Cyberpunk",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,
