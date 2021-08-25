@@ -18,11 +18,9 @@
     "*.cnf": "ini"
   },
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Cyberpunk",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,
-  "workbench.editorAssociations": [],
   "window.zoomLevel": 0,
   "[markdown]": {
     "files.trimTrailingWhitespace": false
@@ -32,4 +30,9 @@
   "editor.renderIndentGuides": false,
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080",
+  "redhat.telemetry.enabled": true,
+  "fileHeaderComment.parameter": {
+
+    "*": {}
+  },
 }
