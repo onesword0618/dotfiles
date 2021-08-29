@@ -14,9 +14,13 @@ title() {
  echo "${GRAY}==============${NONE}"
 }
 
+info() {
+ echo "${BULE}Info: ${NONE} $1"
+}
 
 setup() {
  title "call setup function"
+ info "setup config"
 }
 
 for I in 1; do
