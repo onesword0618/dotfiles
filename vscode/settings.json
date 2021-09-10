@@ -23,7 +23,7 @@
   "files.trimFinalNewlines": false,
   "window.zoomLevel": 0,
   "[markdown]": {
-    "files.trimTrailingWhitespace": false
+    "editor.quickSuggestions": true
   },
   "editor.tabSize": 1,
   "workbench.iconTheme": "material-icon-theme",
@@ -35,4 +35,5 @@
 
     "*": {}
   },
+  "files.eol": "\n",
 }
