@@ -22,7 +22,6 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,
-  "workbench.editorAssociations": [],
   "window.zoomLevel": 0,
   "[markdown]": {
     "files.trimTrailingWhitespace": false
