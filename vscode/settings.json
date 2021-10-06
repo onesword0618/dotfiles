@@ -18,17 +18,22 @@
     "*.cnf": "ini"
   },
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Cyberpunk",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,
   "window.zoomLevel": 0,
   "[markdown]": {
-    "files.trimTrailingWhitespace": false
+    "editor.quickSuggestions": true
   },
   "editor.tabSize": 1,
   "workbench.iconTheme": "material-icon-theme",
   "editor.renderIndentGuides": false,
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080",
+  "redhat.telemetry.enabled": true,
+  "fileHeaderComment.parameter": {
+
+    "*": {}
+  },
+  "files.eol": "\n",
 }
