@@ -36,4 +36,7 @@
     "*": {}
   },
   "files.eol": "\n",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
 }
