@@ -65,6 +65,7 @@ alias cd=cdPwdLs
 alias s=updateApt
 alias reload=reloadDotfiles
 alias javapro=makeJavaProject
+alias purge='sudo docker stop $(sudo docker ps -q) && sudo docker rmi $(sudo docker images -q) -f'
 
 ###  apt
 alias upd='sudo apt update'
