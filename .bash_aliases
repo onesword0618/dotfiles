@@ -121,3 +121,6 @@ alias ..='cd ..' #  ..
 alias c='clear'  #  clear
 alias e='echo'
 alias xo='xdg-open'
+
+### Add Command
+alias tree='tree -a -I "\.DS_Store|\.git|node_modules|vendor\/bundle" -N'
