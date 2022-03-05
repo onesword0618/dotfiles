@@ -124,3 +124,4 @@ alias xo='xdg-open'
 
 ### Add Command
 alias tree='tree -a -I "\.DS_Store|\.git|node_modules|vendor\/bundle" -N'
+alias spring='curl -O https://start.spring.io/build.gradle'
