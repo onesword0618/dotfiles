@@ -95,8 +95,6 @@
     # ページャのコマンドを指定する
     whitespace=space-before-tab,trailing-space
     # 空白とタブの位置が指定した値を満たした場合に、エラーになる
-    fsyncObjectFiles=true
-    # オブジェクトファイルの書き込み時にfsync()を有効にする
     preloadIndex=true
     # 並列インデックスのプリロードを有効にする
     # createObject
